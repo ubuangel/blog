@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>blog</title>
     <link>https://ubuangel.github.io/blog/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on blog</description>
     <generator>Hugo</generator>
     <language>es-pe</language>
     <lastBuildDate>Mon, 03 Nov 2025 19:39:15 -0500</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>https://ubuangel.github.io/blog/posts/llegaste/</link>
       <pubDate>Mon, 03 Nov 2025 19:39:15 -0500</pubDate>
       <guid>https://ubuangel.github.io/blog/posts/llegaste/</guid>
-      <description>&lt;h1 id=&#34;ia&#34;&gt;IA&lt;/h1&gt;&#xA;&lt;h3 id=&#34;introducción-al-blog&#34;&gt;Introducción al Blog&lt;/h3&gt;&#xA;&lt;p&gt;Bienvenido/a a mi espacio digital — un punto de encuentro entre la ciencia, la tecnología y la curiosidad.&#xA;Soy un profesional de Ciencias de la Computación, apasionado por entender cómo las ideas abstractas se transforman en código, sistemas y soluciones que cambian el mundo.&lt;/p&gt;&#xA;&lt;p&gt;En este blog encontrarás reflexiones, guías y análisis sobre los temas que definen la era digital:&lt;/p&gt;&#xA;&lt;p&gt;Inteligencia Artificial, algoritmos y su impacto real en la sociedad.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Bienvenido/a a mi espacio digital — un punto de encuentro entre la ciencia, la tecnología y la curiosidad.&#xA;Soy un profesional de Ciencias de la Computación, apasionado por entender cómo las ideas abstractas se transforman en código, sistemas y soluciones que cambian el mundo.&lt;/p&gt;&#xA;&lt;p&gt;En este blog encontrarás reflexiones, guías y análisis sobre los temas que definen la era digital:&lt;/p&gt;&#xA;&lt;p&gt;Inteligencia Artificial, algoritmos y su impacto real en la sociedad.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
