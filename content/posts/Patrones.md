@@ -182,9 +182,14 @@ Te invito a crear tu propio “lienzo de código”: selecciona una o varias est
 ---
 
 **Referencias**
+
 Bala, R., & Kaswan, K. K. (2014). *Strategy Design Pattern*. *Global Journal of Computer Science and Technology: C Software & Data Engineering*, 14(6). [https://globaljournals.org/GJCST_Volume14/6‑Strategy‑Design‑Pattern.pdf](https://globaljournals.org/GJCST_Volume14/6‑Strategy‑Design‑Pattern.pdf) 
+
 Freeman, E., Freeman, E., Sierra, K., & Bates, B. (2004). *Head First Design Patterns*. O’Reilly Media. (como se cita en la página de Wikipedia sobre el patrón Strategy). ([Wikipedia][1])
+
 IONOS Editorial Team. (2023, July 14). *What is the strategy pattern?* IONOS Digital Guide. [https://www.ionos.com/digitalguide/websites/web-development/strategy-pattern/](https://www.ionos.com/digitalguide/websites/web-development/strategy-pattern/) ([ionos.com][2])
+
 “Strategy Design Pattern.” (n.d.). *GeeksforGeeks*. [https://www.geeksforgeeks.org/strategy‑design‑pattern‑set‑1/](https://www.geeksforgeeks.org/strategy‑design‑pattern‑set‑1/) ([geeksforgeeks.org][3])
+
 “Strategy Design Pattern.” (n.d.). *Sourcemaking*. [https://sourcemaking.com/design_patterns/strategy](https://sourcemaking.com/design_patterns/strategy) ([sourcemaking.com][4])
 
