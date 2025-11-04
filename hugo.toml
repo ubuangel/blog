@@ -1,6 +1,6 @@
 baseURL = "https://ubuangel.github.io/blog/"
 languageCode = 'es-pe'
-title = 'My New Hugo Site'
+title = 'blog'
 theme = 'paper'
 
 [params]

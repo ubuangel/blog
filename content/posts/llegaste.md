@@ -4,9 +4,8 @@ draft = false
 title = 'Llegaste'
 +++
 
-# IA
 
-### Introducción al Blog
+
 
 Bienvenido/a a mi espacio digital — un punto de encuentro entre la ciencia, la tecnología y la curiosidad.
 Soy un profesional de Ciencias de la Computación, apasionado por entender cómo las ideas abstractas se transforman en código, sistemas y soluciones que cambian el mundo.
