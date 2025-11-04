@@ -6,8 +6,15 @@
     <description>Recent content in Posts on blog</description>
     <generator>Hugo</generator>
     <language>es-pe</language>
-    <lastBuildDate>Mon, 03 Nov 2025 19:39:15 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 03 Nov 2025 19:59:03 -0500</lastBuildDate>
     <atom:link href="https://ubuangel.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Patrones</title>
+      <link>https://ubuangel.github.io/blog/posts/patrones/</link>
+      <pubDate>Mon, 03 Nov 2025 19:59:03 -0500</pubDate>
+      <guid>https://ubuangel.github.io/blog/posts/patrones/</guid>
+      <description>&lt;h2 id=&#34;cómo-un-patrón-de-diseño-transforma-tu-código-en-arte-del-concepto-a-la-visualización&#34;&gt;Cómo un patrón de diseño transforma tu código en arte: del concepto a la visualización&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introducción&#34;&gt;Introducción&lt;/h3&gt;&#xA;&lt;p&gt;En el corazón de la programación elegante reside una buena arquitectura. Los patrones de diseño — esas soluciones probadas para problemas recurrentes — no solo ayudan a organizar código, sino que pueden &lt;strong&gt;convertir código funcional en piezas casi artísticas&lt;/strong&gt;. En este artículo exploraremos cómo el patrón Strategy Pattern puede ser ese hilo que te lleva del algoritmo al arte, mostrando cómo pasar de la teoría al código limpio y de allí a una visualización creativa que hace tangible el diseño.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Llegaste</title>
       <link>https://ubuangel.github.io/blog/posts/llegaste/</link>
