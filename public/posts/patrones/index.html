@@ -1,0 +1,302 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:"
+  lang="es-pe"
+  dir="ltr"
+><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Patrones - blog</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="Cómo un patrón de diseño transforma tu código en arte: del concepto a la visualización
+Introducción
+En el corazón de la programación elegante reside una buena arquitectura. Los patrones de diseño — esas soluciones probadas para problemas recurrentes — no solo ayudan a organizar código, sino que pueden convertir código funcional en piezas casi artísticas. En este artículo exploraremos cómo el patrón Strategy Pattern puede ser ese hilo que te lleva del algoritmo al arte, mostrando cómo pasar de la teoría al código limpio y de allí a una visualización creativa que hace tangible el diseño." />
+  <meta name="author" content="blog" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="http://localhost:1313/blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="http://localhost:1313/blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.2">
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="http://localhost:1313/blog/"
+      >blog</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = ''.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Patrones</h1><div class="text-xs antialiased opacity-60"><time>Nov 3, 2025</time></div></header>
+
+  <section><h2 id="cómo-un-patrón-de-diseño-transforma-tu-código-en-arte-del-concepto-a-la-visualización">Cómo un patrón de diseño transforma tu código en arte: del concepto a la visualización</h2>
+<h3 id="introducción">Introducción</h3>
+<p>En el corazón de la programación elegante reside una buena arquitectura. Los patrones de diseño — esas soluciones probadas para problemas recurrentes — no solo ayudan a organizar código, sino que pueden <strong>convertir código funcional en piezas casi artísticas</strong>. En este artículo exploraremos cómo el patrón Strategy Pattern puede ser ese hilo que te lleva del algoritmo al arte, mostrando cómo pasar de la teoría al código limpio y de allí a una visualización creativa que hace tangible el diseño.</p>
+<p>Aquí no solo veremos <em>qué es</em> el patrón, sino <em>cómo aplicarlo</em> en código, y luego cómo transformarlo en una visualización que inspire, eduque y deleite.</p>
+<hr>
+<h3 id="1-qué-es-el-strategy-pattern">1. ¿Qué es el Strategy Pattern?</h3>
+<p>El patrón Strategy pertenece a la categoría de patrones de comportamiento. Su objetivo: definir una familia de algoritmos, encapsular cada uno en su propia clase (o módulo) y hacerlos intercambiables en tiempo de ejecución. (<a href="https://www.geeksforgeeks.org/strategy-pattern-set-1/?utm_source=chatgpt.com" title="Strategy Design Pattern - GeeksforGeeks">GeeksforGeeks</a>)</p>
+<p>En otras palabras: en lugar de tener un bloque <code>if/else</code> gigante que elija qué hacer en función de las condiciones, separamos cada comportamiento en su propia clase, y dejamos que el «cliente» o «contexto» simplemente escoja el que desee usar.</p>
+<p><strong>Participantes típicos</strong>:</p>
+<ul>
+<li><strong>Strategy</strong> (interfaz o clase abstracta) — define el contrato para las estrategias.</li>
+<li><strong>ConcreteStrategy</strong> — implementaciones concretas de esa interfaz.</li>
+<li><strong>Context</strong> — contiene una referencia a una Strategy, y delega la operación a la Strategy actual. (<a href="https://tutorials.visual-paradigm.com/strategy-pattern-tutorial/?utm_source=chatgpt.com" title="Strategy Pattern Tutorial - Visual Paradigm Tutorials">Visual Paradigm Tutorials</a>)</li>
+</ul>
+<p><strong>Ventajas clave</strong>:</p>
+<ul>
+<li>Código más flexible y abierto a cambios (principio Open/Closed).</li>
+<li>Menos acoplamiento: el contexto no depende de detalles concretos.</li>
+<li>Nuevas estrategias pueden ser añadidas sin modificar el contexto. (<a href="https://alesr.github.io/posts/strategy-pattern/?utm_source=chatgpt.com" title="Strategy Design Pattern | alesr">alesr</a>)</li>
+</ul>
+<hr>
+<h3 id="2-diseño-del-ejemplo-del-patrón-a-la-visualización">2. Diseño del ejemplo: del patrón a la visualización</h3>
+<p>Para llevarlo de la teoría al arte vamos a plantear un ejemplo concreto que permita <strong>visualizar</strong> el patrón en acción.</p>
+<p><strong>Contexto del ejemplo</strong>: Imagina una aplicación web de visualización de partículas (o gráficos generativos) que puede emplear distintos comportamientos para mover o transformar las partículas: “movimiento lineal”, “movimiento radial”, “ondas sinusoides”, etc. Cada tipo de movimiento será una <em>estrategia</em>. El contexto será el motor de animación que recibe una estrategia y la ejecuta. Luego visualizaremos el resultado en un canvas.</p>
+<h4 id="21-arquitectura-de-clases">2.1 Arquitectura de clases</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>MovimientoStrategy (interfaz)
+</span></span><span style="display:flex;"><span>│
+</span></span><span style="display:flex;"><span>├─ LinearMovementStrategy
+</span></span><span style="display:flex;"><span>├─ RadialMovementStrategy
+</span></span><span style="display:flex;"><span>└─ SineWaveMovementStrategy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AnimationContext
+</span></span></code></pre></div><ul>
+<li><code>MovimientoStrategy</code>: define el método <code>update(particle, deltaTime)</code>.</li>
+<li><code>LinearMovementStrategy</code>: implementa movimiento en línea recta.</li>
+<li><code>RadialMovementStrategy</code>: movimiento radial hacia/desde el centro.</li>
+<li><code>SineWaveMovementStrategy</code>: movimiento oscilatorio tipo onda seno.</li>
+<li><code>AnimationContext</code>: recibe una estrategia, la aplica a cada partícula en cada frame.</li>
+</ul>
+<h4 id="22-código-de-ejemplo-javascript--canvas">2.2 Código de ejemplo (JavaScript + Canvas)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Strategy interface
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MovementStrategy</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">particle</span>, <span style="color:#a6e22e">deltaTime</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;update() must be implemented.&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Concrete Strategies
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinearMovementStrategy</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">MovementStrategy</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">dt</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">vx</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">dt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">vy</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">dt</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RadialMovementStrategy</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">MovementStrategy</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">cx</span>, <span style="color:#a6e22e">cy</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cx</span>; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cy</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">dt</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cx</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cy</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">angle</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">atan2</span>(<span style="color:#a6e22e">dy</span>, <span style="color:#a6e22e">dx</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">vr</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">dt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dist</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">hypot</span>(<span style="color:#a6e22e">dx</span>, <span style="color:#a6e22e">dy</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cx</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">cos</span>(<span style="color:#a6e22e">angle</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">dist</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cy</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">sin</span>(<span style="color:#a6e22e">angle</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">dist</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SineWaveMovementStrategy</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">MovementStrategy</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">dt</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">vx</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">dt</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">baseY</span> <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">sin</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">freq</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">phase</span>) <span style="color:#f92672">*</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">amp</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Context
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AnimationContext</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">strategy</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">strategy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strategy</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">particles</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setStrategy</span>(<span style="color:#a6e22e">strategy</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">strategy</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strategy</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">addParticle</span>(<span style="color:#a6e22e">p</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">particles</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">p</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">dt</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">particles</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">p</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">strategy</span>.<span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">dt</span>);
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">clearRect</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">width</span>,<span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">height</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">particles</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">p</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">beginPath</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">arc</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">radius</span>, <span style="color:#ae81ff">0</span>, Math.<span style="color:#a6e22e">PI</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">fillStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">color</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ctx</span>.<span style="color:#a6e22e">fill</span>();
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Con esta base, puedes crear diferentes partículas y cambiar dinámicamente la estrategia de movimiento para ver distintas “pinturas cinéticas”.</p>
+<h4 id="23-visualización-y-arte">2.3 Visualización y arte</h4>
+<p>Una vez que el motor está en marcha, la belleza aparece cuando:</p>
+<ul>
+<li>Cambias estrategias en tiempo real (por ejemplo al hacer clic o presionar tecla).</li>
+<li>Combinas estrategias: puedes incluso mezclar movimientos, modular parámetros como amplitud, frecuencia, velocidad, color.</li>
+<li>Añades visualizaciones extra: trazos, gradientes, efectos de desenfoque, layering.</li>
+<li>Usas la estrategia como metáfora: cada «estrategia» es un pincel o estilo de movimiento.</li>
+</ul>
+<p>La clave aquí es que el patrón Strategy no solo organiza el código, sino que <em>da forma al comportamiento visual</em>. Cada estrategia es una forma artística distinta. Así el código no es solo funcional, sino creativo.</p>
+<p><img src="https://www.researchgate.net/publication/349931934/figure/fig2/AS%3A1013777336119296%401618714760094/Strategy-pattern-class-diagram.jpg" alt="Image"></p>
+<p><img src="https://camo.githubusercontent.com/035537a7c3c02ee274f0d5e57aa634687ef6f43284212b0f5da1bbbd7e678b8e/68747470733a2f2f63646e2e7261776769742e636f6d2f6f747469732f63616e7661732d7061727469636c65732f6d61737465722f73637265656e732f73637265656e2e6a7067" alt="Image"></p>
+<p><img src="https://i3.wp.com/onaircode.com/wp-content/uploads/2019/07/flowfield.png" alt="Image"></p>
+<p><img src="https://www.frontiersin.org/files/Articles/793914/fbinf-02-793914-HTML/image_m/fbinf-02-793914-g001.jpg" alt="Image"></p>
+<hr>
+<h3 id="3-reflexión-por-qué-esto-es-arte">3. Reflexión: por qué esto es arte</h3>
+<ul>
+<li><strong>Modularidad = variabilidad</strong>: Al tener estrategias independientes, puedes intercambiarlas, combinarlas, experimentar. Esto abre la puerta a “variaciones” artísticas sin reescribir todo el motor.</li>
+<li><strong>Comportamientos visuales como algoritmos</strong>: Un algoritmo de movimiento no es solo matemática fría: puede ser un trazo, un ritmo, una danza de partículas.</li>
+<li><strong>Código claro = estética del software</strong>: Cuando tu código sigue buenos patrones, no solo es mantenible, también ‘se ve’ bien — lo que corresponde a una estética del software.</li>
+<li><strong>Interacción y transformación</strong>: Cambiar la estrategia es como cambiar el pincel o la paleta: permite al lector/usuario ver la metamorfosis del comportamiento.</li>
+</ul>
+<hr>
+<h3 id="4-buenas-prácticas-y-retos">4. Buenas prácticas y retos</h3>
+<ul>
+<li>Asegúrate de mantener <strong>cohesión</strong>: cada estrategia debe tener una única responsabilidad.</li>
+<li>Evita que el contexto sepa detalles de cada estrategia — la interfaz debe abstraer lo suficiente.</li>
+<li>Piensa en rendimiento: los sistemas de visualización pueden volverse intensivos. Las estrategias deben estar optimizadas (evita lógica pesada en cada frame si no es necesario).</li>
+<li>Considera permitir <strong>composición de estrategias</strong>: por ejemplo, una estrategia de “movimiento” puede combinarse con una estrategia de “color” o “tamaño”.</li>
+<li>Documenta bien: ya que el arte puede implicar parámetros visuales, es útil que cada estrategia tenga metadatos claros (¿qué hace? ¿qué parámetros acepta?).</li>
+</ul>
+<hr>
+<h3 id="5-conclusión">5. Conclusión</h3>
+<p>El patrón Strategy es mucho más que un recurso para organizar código: es una paleta de posibilidades para que el programa <strong>se comporte</strong> de distintas maneras, y si lo unes con visualización, se convierte en <strong>una obra de arte interactiva</strong>. Al separar el comportamiento (estrategias) del mecanismo (contexto) y luego aplicar esos comportamientos en una capa visual, fusionas arquitectura y estética.</p>
+<p>Te invito a crear tu propio “lienzo de código”: selecciona una o varias estrategias, añade tus parámetros, observa el resultado, comparte tu visualización. Que tu lector vea no solo el <em>qué</em> del patrón, sino el <em>cómo</em> y el <em>por qué</em>. Aquí, el código se vuelve pincel, el patrón apuesta, y la visualización… arte.</p>
+<hr>
+<p>.</p>
+</section>
+
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="http://localhost:1313/blog/posts/llegaste/"
+      ><span>Llegaste</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="http://localhost:1313/blog/">blog</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

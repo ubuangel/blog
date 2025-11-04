@@ -1,6 +1,6 @@
 +++
 date = '2025-11-03T19:59:03-05:00'
-draft = true
+draft = false
 title = 'Patrones'
 +++
 
@@ -142,11 +142,11 @@ La clave aquí es que el patrón Strategy no solo organiza el código, sino que 
 
 ![Image](https://www.researchgate.net/publication/349931934/figure/fig2/AS%3A1013777336119296%401618714760094/Strategy-pattern-class-diagram.jpg)
 
-![Image](https://i.pinimg.com/originals/5c/d7/ef/5cd7ef314fcbbf676788b6f5360823bb.png)
+
 
 ![Image](https://camo.githubusercontent.com/035537a7c3c02ee274f0d5e57aa634687ef6f43284212b0f5da1bbbd7e678b8e/68747470733a2f2f63646e2e7261776769742e636f6d2f6f747469732f63616e7661732d7061727469636c65732f6d61737465722f73637265656e732f73637265656e2e6a7067)
 
-![Image](https://cruip.com/wp-content/uploads/2023/05/particle-animation-html-canvas-article-768x432.png)
+
 
 ![Image](https://i3.wp.com/onaircode.com/wp-content/uploads/2019/07/flowfield.png)
 
@@ -181,8 +181,10 @@ Te invito a crear tu propio “lienzo de código”: selecciona una o varias est
 
 ---
 
-¿Te gustaría que prepare un archivo de *plantilla de código descargable* (por ejemplo en GitHub Gist) con este ejemplo para que puedas integrarlo en tu blog? Puedo armarlo en JavaScript o en otro lenguaje que prefieras.
+**Referencias**
+Bala, R., & Kaswan, K. K. (2014). *Strategy Design Pattern*. *Global Journal of Computer Science and Technology: C Software & Data Engineering*, 14(6). [https://globaljournals.org/GJCST_Volume14/6‑Strategy‑Design‑Pattern.pdf](https://globaljournals.org/GJCST_Volume14/6‑Strategy‑Design‑Pattern.pdf) 
+Freeman, E., Freeman, E., Sierra, K., & Bates, B. (2004). *Head First Design Patterns*. O’Reilly Media. (como se cita en la página de Wikipedia sobre el patrón Strategy). ([Wikipedia][1])
+IONOS Editorial Team. (2023, July 14). *What is the strategy pattern?* IONOS Digital Guide. [https://www.ionos.com/digitalguide/websites/web-development/strategy-pattern/](https://www.ionos.com/digitalguide/websites/web-development/strategy-pattern/) ([ionos.com][2])
+“Strategy Design Pattern.” (n.d.). *GeeksforGeeks*. [https://www.geeksforgeeks.org/strategy‑design‑pattern‑set‑1/](https://www.geeksforgeeks.org/strategy‑design‑pattern‑set‑1/) ([geeksforgeeks.org][3])
+“Strategy Design Pattern.” (n.d.). *Sourcemaking*. [https://sourcemaking.com/design_patterns/strategy](https://sourcemaking.com/design_patterns/strategy) ([sourcemaking.com][4])
 
-[1]: https://www.geeksforgeeks.org/strategy-pattern-set-1/?utm_source=chatgpt.com "Strategy Design Pattern - GeeksforGeeks"
-[2]: https://tutorials.visual-paradigm.com/strategy-pattern-tutorial/?utm_source=chatgpt.com "Strategy Pattern Tutorial - Visual Paradigm Tutorials"
-[3]: https://alesr.github.io/posts/strategy-pattern/?utm_source=chatgpt.com "Strategy Design Pattern | alesr"
